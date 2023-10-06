@@ -45,14 +45,38 @@ class ResultScreen: UIView {
         return button
     }()
 
+    lazy var resultLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 73)
+        label.text = "Gasolina"
+        return label
+    }()
 
+    lazy var calculateButton:UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Calcular novamente", for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        button.setTitleColor(.white, for: .normal)
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 8
+        button.backgroundColor = UIColor(red: 230/255, green: 0/255, blue: 127/255, alpha: 1.0)
+        //button.addTarget(self, action: #selector(tappedCalculateButton), for: .touchUpInside)
+
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         addSubview(backgroundImage)
-        addSubview(logAppImage)
         addSubview(backButton)
+        addSubview(logAppImage)
         addSubview(sentenceLabel)
+        addSubview(resultLabel)
+        addSubview(calculateButton)
 
         configContraints()
     }
@@ -78,7 +102,14 @@ class ResultScreen: UIView {
 
             sentenceLabel.topAnchor.constraint(equalTo: logAppImage.bottomAnchor, constant: 180),
             sentenceLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
+
+            resultLabel.topAnchor.constraint(equalTo: sentenceLabel.bottomAnchor, constant: 12),
+            resultLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+
+            calculateButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -135),
+            calculateButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
+            calculateButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60),
+            calculateButton.heightAnchor.constraint(equalToConstant: 44),
         ])
     }
 }
