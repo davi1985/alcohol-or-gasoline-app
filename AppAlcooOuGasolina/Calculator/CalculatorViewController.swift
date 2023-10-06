@@ -20,6 +20,7 @@ class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         alert = Alert(controller: self)
         screen?.delegate(delegate: self)
     }
