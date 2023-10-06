@@ -47,7 +47,8 @@ class CalculatorScreen: UIView {
         textField.keyboardType = .decimalPad
         textField.textColor = .darkGray
         textField.placeholder = "Preço do álcool"
-        
+        textField.addDoneButtonOnKeyboard()
+
         return textField
     }()
     
@@ -60,7 +61,8 @@ class CalculatorScreen: UIView {
         textField.keyboardType = .decimalPad
         textField.textColor = .darkGray
         textField.placeholder = "Preço da gasolina"
-        
+        textField.addDoneButtonOnKeyboard()
+
         return textField
     }()
     

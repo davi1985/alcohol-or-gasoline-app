@@ -65,6 +65,8 @@ extension CalculatorViewController: CalculatorScreenDelegate {
             }
 
             navigationController?.pushViewController(viewController ?? UIViewController(), animated: true)
+            screen?.ethanolPriceTextField.text = ""
+            screen?.gaslPriceTextField.text = ""
         }
     }
     
