@@ -13,10 +13,6 @@ The following tools were used in this project:
 - [Swift](https://developer.apple.com/swift/)
 - [UIKit](https://developer.apple.com/documentation/uikit)
 
-## :white_check_mark: Requirements
-
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
-
 ## Screenshots
 
 <img src="./screenshots/screen-01.png" alt="Screen 01" />
