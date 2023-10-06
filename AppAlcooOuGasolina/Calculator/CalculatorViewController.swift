@@ -41,26 +41,32 @@ class CalculatorViewController: UIViewController {
             
             return false
         }
-        
+
         return true
     }
 }
 
 extension CalculatorViewController: CalculatorScreenDelegate {
     func tappedCalculateButton() {
-        if validateTextFields() {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .decimal
-            
-            let ethanolPrice: Double = (formatter.number(from: screen?.ethanolPriceTextField.text ?? "0.0") as? Double) ?? 0.0
-            let gasPrice: Double = (formatter.number(from: screen?.gaslPriceTextField.text ?? "0.0") as? Double) ?? 0.0
-            
-            if ethanolPrice / gasPrice > 0.7 {
-                print("Melhor utilizar Gasolina")
-            } else {
-                print("Melhor utilizar Álcool")
-            }
-        }
+        let viewController = ResultViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+//        if validateTextFields() {
+//            let formatter = NumberFormatter()
+//            formatter.numberStyle = .decimal
+//            
+//            let ethanolPrice: Double = (formatter.number(from: screen?.ethanolPriceTextField.text ?? "0.0") as? Double) ?? 0.0
+//            let gasPrice: Double = (formatter.number(from: screen?.gaslPriceTextField.text ?? "0.0") as? Double) ?? 0.0
+//            
+//            let viewController = ResultViewController()
+//
+//            if ethanolPrice / gasPrice > 0.7 {
+//
+//            } else {
+//                print("Melhor utilizar Álcool")
+//            }
+//
+//            navigationController?.pushViewController(viewController, animated: true)
+//        }
     }
     
     func tappedBackButton() {

@@ -18,6 +18,24 @@ class ResultScreen: UIView {
         return image
     }()
 
+    lazy var logAppImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "LOGO menor")
+        image.contentMode = .scaleAspectFit
+
+        return image
+    }()
+
+    lazy var sentenceLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 31)
+        label.text = "Abasteça com:"
+        return label
+    }()
+
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -32,7 +50,9 @@ class ResultScreen: UIView {
         super.init(frame: frame)
 
         addSubview(backgroundImage)
+        addSubview(logAppImage)
         addSubview(backButton)
+        addSubview(sentenceLabel)
 
         configContraints()
     }
@@ -49,27 +69,16 @@ class ResultScreen: UIView {
             backgroundImage.trailingAnchor.constraint(equalTo: trailingAnchor),
             backgroundImage.bottomAnchor.constraint(equalTo: bottomAnchor),
 
-//            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-//            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-//
-//            logAppImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 150 ),
-//            logAppImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-//            logAppImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-//
-//            ethanolPriceTextField.topAnchor.constraint(equalTo: logAppImage.bottomAnchor, constant: 134),
-//            ethanolPriceTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-//            ethanolPriceTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-//            ethanolPriceTextField.heightAnchor.constraint(equalToConstant: 45),
-//
-//            gaslPriceTextField.topAnchor.constraint(equalTo: ethanolPriceTextField.bottomAnchor, constant: 16),
-//            gaslPriceTextField.leadingAnchor.constraint(equalTo: ethanolPriceTextField.leadingAnchor),
-//            gaslPriceTextField.trailingAnchor.constraint(equalTo: ethanolPriceTextField.trailingAnchor),
-//            gaslPriceTextField.heightAnchor.constraint(equalTo: ethanolPriceTextField.heightAnchor),
-//
-//            calculateButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -135),
-//            calculateButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 60),
-//            calculateButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -60),
-//            calculateButton.heightAnchor.constraint(equalToConstant: 44),
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+
+            logAppImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60 ),
+            logAppImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            logAppImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+
+            sentenceLabel.topAnchor.constraint(equalTo: logAppImage.bottomAnchor, constant: 180),
+            sentenceLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
         ])
     }
 }
