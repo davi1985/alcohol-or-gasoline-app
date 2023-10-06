@@ -15,8 +15,10 @@ The following tools were used in this project:
 
 ## Screenshots
 
-<img src="./screenshots/screen-01.png" alt="Screen 01" height="400"/>
-<img src="./screenshots/screen-02.png" alt="Screen 02" height="400"/>
-<img src="./screenshots/screen-03.png" alt="Screen 03" height="400"/>
+<div display="flex">
+  <img src="./screenshots/screen-01.png" alt="Screen 01" height="400"/>
+  <img src="./screenshots/screen-02.png" alt="Screen 02" height="400"/>
+  <img src="./screenshots/screen-03.png" alt="Screen 03" height="400"/>
+</div>
 
 <a href="#top">Back to top</a>
