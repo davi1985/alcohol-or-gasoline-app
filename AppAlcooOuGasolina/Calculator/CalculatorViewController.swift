@@ -19,6 +19,16 @@ class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        screen?.delegate(delegate: self)
+    }
+}
 
+extension CalculatorViewController: CalculatorScreenDelegate {
+    func tappedCalculateButton() {
+        print(#function)
+    }
+    
+    func tappedBackButton() {
+        print(#function)
     }
 }
